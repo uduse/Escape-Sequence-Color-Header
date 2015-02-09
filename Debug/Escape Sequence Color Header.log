@@ -1,4 +1,4 @@
-﻿Build started 2/9/2015 2:17:19 PM.
+﻿Build started 2/9/2015 2:50:14 PM.
      1>Project "Y:\GD\UCD\Casual Coding\ForFun\Escape Sequence Color Header\Escape Sequence Color Header.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          X:\VS\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Escape Sequence Color Header.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "Escape Sequence Color Header.cpp"
@@ -11,4 +11,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.64
+Time Elapsed 00:00:00.65
