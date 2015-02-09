@@ -5,7 +5,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
+#include <iosfwd>
+#include <istream>
+#include <sstream>
 
 using namespace std;
 
@@ -74,13 +76,19 @@ int _tmain( int argc, _TCHAR* argv[] )
 	const string TA_ConcealedTxt = "CONCEALED";
 
 	const string BracketsTxt = "[]";
+	const string BracketsLTxt = "[";
 	const string BracesLTxt = "{";
 	const string BracesRTxt = "}";
 	const string EscapeTxt = "0x1b";
 	const string CommaTxt = ",";
 	const string SemicolomTxt = ";";
 	const string EqualTxt = "=";
+	const string QuoteTxt = "\'";
+
 	ofstream output( "Escape_Sequences_Colors.h" );
+
+
+	output << "const char COLOR_NORMAL[] = { 0x1b, '[', '0', ';', '3', '9', 'm', 0 };" << endl;
 
 	for ( int indexTA = 0; indexTA < numTextAttributes; indexTA++ )
 	{
@@ -88,7 +96,9 @@ int _tmain( int argc, _TCHAR* argv[] )
 		{
 			for ( int indexBack = 0; indexBack < numBackgroundColors; indexBack++ )
 			{
+				char temp;
 				string out;
+
 				out.append( ConstTxt );
 				out.append( BlankTxt );
 				out.append( CharTxt );
@@ -194,8 +204,10 @@ int _tmain( int argc, _TCHAR* argv[] )
 				default:
 					break;
 				}
-
+				name.append( BracketsTxt );
+				
 				out.append( name );
+
 
 				out.append( BlankTxt );
 				out.append( EqualTxt );
@@ -205,10 +217,172 @@ int _tmain( int argc, _TCHAR* argv[] )
 
 				out.append( EscapeTxt );
 				out.append( CommaTxt );
+				out.append( BlankTxt );
+				out.append( QuoteTxt );
+				out.append( BracketsLTxt );
+				out.append( QuoteTxt );
+				out.append( CommaTxt );
+				out.append( BlankTxt );
 
+				string sequence = "";
+
+				//====================================//
+				//  Text Attributes Print
+				//====================================//
+
+				TextAttributes TA;
+				switch ( indexTA )
+				{
+				case 0:
+					TA = TA_ATTRIBUTES_OFF;
+					break;
+				case 1:
+					TA = TA_BOLD;
+					break;
+				case 2:
+					TA = TA_UNDERSCORE;
+					break;
+				case 3:
+					TA = TA_BLINK;
+					break;
+				case 4:
+					TA = TA_REVERSE_VIDEO;
+					break;
+				case 5:
+					TA = TA_CONCEALED;
+					break;
+				default:
+					break;
+				}
+				
+
+				istringstream TAS( to_string( TA ) );
+
+				while ( TAS >> temp )
+				{
+					sequence.append( QuoteTxt );
+					sequence += temp;
+					sequence.append( QuoteTxt );
+					sequence.append( CommaTxt );
+					sequence.append( BlankTxt );
+				}
+
+				sequence.append( QuoteTxt );
+				sequence.append( SemicolomTxt );
+				sequence.append( QuoteTxt );
+				sequence.append( CommaTxt );
+				sequence.append( BlankTxt );
+
+				//====================================//
+				//  Foreground Color Print
+				//====================================//
+
+				ForegroundColors FC;
+				switch ( indexFore )
+				{
+				case 0:
+					FC = F_Black;
+					break;
+				case 1:
+					FC = F_Red;
+					break;
+				case 2:
+					FC = F_Green;
+					break;
+				case 3:
+					FC = F_Yellow;
+					break;
+				case 4:
+					FC = F_Blue;
+					break;
+				case 5:
+					FC = F_Magenta;
+					break;
+				case 6:
+					FC = F_Cyan;
+					break;
+				case 7:
+					FC = F_White;
+					break;
+				default:
+					break;
+				}
+
+				istringstream FCS( to_string( FC ) );
+
+				while ( FCS >> temp )
+				{
+					sequence.append( QuoteTxt );
+					sequence += temp;
+					sequence.append( QuoteTxt );
+					sequence.append( CommaTxt );
+					sequence.append( BlankTxt );
+				}
+
+				sequence.append( QuoteTxt );
+				sequence.append( SemicolomTxt );
+				sequence.append( QuoteTxt );
+				sequence.append( CommaTxt );
+				sequence.append( BlankTxt );
+
+
+				//====================================//
+				//  Background Color Print
+				//====================================//
+
+				BackgroundColors BC;
+				switch ( indexBack )
+				{
+				case 0:
+					BC = B_Black;
+					break;
+				case 1:
+					BC = B_Red;
+					break;
+				case 2:
+					BC = B_Green;
+					break;
+				case 3:
+					BC = B_Yellow;
+					break;
+				case 4:
+					BC = B_Blue;
+					break;
+				case 5:
+					BC = B_Magenta;
+					break;
+				case 6:
+					BC = B_Cyan;
+					break;
+				case 7:
+					BC = B_White;
+					break;
+				default:
+					break;
+				}
+
+				istringstream BCS( to_string( BC ) );
+
+				while ( BCS >> temp )
+				{
+					sequence.append( QuoteTxt );
+					sequence += temp;
+					sequence.append( QuoteTxt );
+					sequence.append( CommaTxt );
+					sequence.append( BlankTxt );
+				}
+
+
+				out.append( sequence );
+
+				// Fixed Endings
+				out.append( QuoteTxt );
+				out.append( "m" );
+				out.append( QuoteTxt );
 				out.append( CommaTxt );
 				out.append( BlankTxt );
 				out.append( "0" );
+				out.append( BlankTxt );
 
 				out.append( BracesRTxt );
 				out.append( SemicolomTxt );
