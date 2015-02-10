@@ -1,5 +1,5 @@
 # Escape-Sequence-Color-Header
-Color Your Output in Unix!!
+Color Your Output in Unix using C++!!
 
 ![](https://github.com/Uduse/Escape-Sequence-Color-Header/blob/master/img.png?raw=true)
 
