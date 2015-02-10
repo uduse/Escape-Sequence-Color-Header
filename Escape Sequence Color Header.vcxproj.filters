@@ -32,7 +32,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Escape Sequence Color Header.cpp">
+    <ClCompile Include="Escape Sequence Color Header Generader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

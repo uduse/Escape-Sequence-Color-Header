@@ -1,3 +1,41 @@
+/*!
+ * File:
+ * Escape Sequence Color Header.h
+ *
+ * Date:
+ * 2015/02/09 16:13
+ *
+ * Author:
+ * Uduse
+ *
+ *
+ *
+ * Text Attribute Options:
+ * ATTRIBUTES_OFF, BOLD, UNDERSCORE, BLINK, REVERSE_VIDEO, CONCEALED
+ *
+ * Color Options:
+ * BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE
+ * 
+ * 
+ * Format:
+ * COLOR_$Foreground Color$_$Background Color$
+ * COLOR_$Text Attribute$_$Foreground Color$_$Background Color$
+ * COLOR_NORMAL // To set color to default
+ * e.g.
+ * COLOR_BLUE_BLACK // Leave Text Attribute Blank if no Text Attribute appied
+ * COLOR_UNDERSCORE_YELLOW_RED
+ * COLOR_NORMAL
+ *
+ *
+ * Usage:
+ *
+ * Just use  to stream the color you want before outputing text and
+ * use  again to set the color to normal after outputing text.
+ * e.g. cout << COLOR_BLUE_BLACK << "TEXT" << COLOR_NORMAL << endl;
+ * e.g. cout << COLOR_BOLD_YELLOW_CYAN << "TEXT" << COLOR_NORMAL << endl;
+ *
+ *
+ */
 const char COLOR_NORMAL[] = { 0x1b, '[', '0', ';', '3', '9', 'm', 0 };
 const char COLOR_BLACK_BLACK[] = { 0x1b, '[', '0', ';', '3', '0', ';', '4', '0', 'm', 0 };
 const char COLOR_BLACK_RED[] = { 0x1b, '[', '0', ';', '3', '0', ';', '4', '1', 'm', 0 };
@@ -255,70 +293,70 @@ const char COLOR_BLINK_WHITE_BLUE[] = { 0x1b, '[', '5', ';', '3', '7', ';', '4',
 const char COLOR_BLINK_WHITE_MAGENTA[] = { 0x1b, '[', '5', ';', '3', '7', ';', '4', '5', 'm', 0 };
 const char COLOR_BLINK_WHITE_CYAN[] = { 0x1b, '[', '5', ';', '3', '7', ';', '4', '6', 'm', 0 };
 const char COLOR_BLINK_WHITE_WHITE[] = { 0x1b, '[', '5', ';', '3', '7', ';', '4', '7', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLACK_BLACK[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '0', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLACK_RED[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '1', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLACK_GREEN[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '2', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLACK_YELLOW[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '3', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLACK_BLUE[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '4', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLACK_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '5', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLACK_CYAN[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '6', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLACK_WHITE[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '7', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_RED_BLACK[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '0', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_RED_RED[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '1', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_RED_GREEN[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '2', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_RED_YELLOW[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '3', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_RED_BLUE[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '4', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_RED_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '5', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_RED_CYAN[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '6', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_RED_WHITE[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '7', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_GREEN_BLACK[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '0', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_GREEN_RED[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '1', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_GREEN_GREEN[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '2', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_GREEN_YELLOW[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '3', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_GREEN_BLUE[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '4', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_GREEN_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '5', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_GREEN_CYAN[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '6', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_GREEN_WHITE[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '7', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_YELLOW_BLACK[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '0', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_YELLOW_RED[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '1', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_YELLOW_GREEN[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '2', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_YELLOW_YELLOW[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '3', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_YELLOW_BLUE[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '4', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_YELLOW_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '5', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_YELLOW_CYAN[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '6', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_YELLOW_WHITE[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '7', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLUE_BLACK[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '0', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLUE_RED[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '1', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLUE_GREEN[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '2', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLUE_YELLOW[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '3', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLUE_BLUE[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '4', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLUE_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '5', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLUE_CYAN[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '6', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_BLUE_WHITE[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '7', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_MAGENTA_BLACK[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '0', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_MAGENTA_RED[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '1', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_MAGENTA_GREEN[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '2', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_MAGENTA_YELLOW[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '3', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_MAGENTA_BLUE[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '4', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_MAGENTA_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '5', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_MAGENTA_CYAN[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '6', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_MAGENTA_WHITE[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '7', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_CYAN_BLACK[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '0', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_CYAN_RED[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '1', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_CYAN_GREEN[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '2', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_CYAN_YELLOW[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '3', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_CYAN_BLUE[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '4', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_CYAN_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '5', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_CYAN_CYAN[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '6', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_CYAN_WHITE[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '7', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_WHITE_BLACK[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '0', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_WHITE_RED[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '1', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_WHITE_GREEN[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '2', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_WHITE_YELLOW[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '3', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_WHITE_BLUE[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '4', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_WHITE_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '5', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_WHITE_CYAN[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '6', 'm', 0 };
-const char COLOR_REVERSE_VIDEO_WHITE_WHITE[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '7', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLACK_BLACK[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '0', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLACK_RED[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '1', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLACK_GREEN[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '2', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLACK_YELLOW[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '3', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLACK_BLUE[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '4', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLACK_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '5', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLACK_CYAN[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '6', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLACK_WHITE[] = { 0x1b, '[', '7', ';', '3', '0', ';', '4', '7', 'm', 0 };
+const char COLOR_REVERSEVIDEO_RED_BLACK[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '0', 'm', 0 };
+const char COLOR_REVERSEVIDEO_RED_RED[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '1', 'm', 0 };
+const char COLOR_REVERSEVIDEO_RED_GREEN[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '2', 'm', 0 };
+const char COLOR_REVERSEVIDEO_RED_YELLOW[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '3', 'm', 0 };
+const char COLOR_REVERSEVIDEO_RED_BLUE[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '4', 'm', 0 };
+const char COLOR_REVERSEVIDEO_RED_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '5', 'm', 0 };
+const char COLOR_REVERSEVIDEO_RED_CYAN[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '6', 'm', 0 };
+const char COLOR_REVERSEVIDEO_RED_WHITE[] = { 0x1b, '[', '7', ';', '3', '1', ';', '4', '7', 'm', 0 };
+const char COLOR_REVERSEVIDEO_GREEN_BLACK[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '0', 'm', 0 };
+const char COLOR_REVERSEVIDEO_GREEN_RED[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '1', 'm', 0 };
+const char COLOR_REVERSEVIDEO_GREEN_GREEN[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '2', 'm', 0 };
+const char COLOR_REVERSEVIDEO_GREEN_YELLOW[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '3', 'm', 0 };
+const char COLOR_REVERSEVIDEO_GREEN_BLUE[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '4', 'm', 0 };
+const char COLOR_REVERSEVIDEO_GREEN_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '5', 'm', 0 };
+const char COLOR_REVERSEVIDEO_GREEN_CYAN[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '6', 'm', 0 };
+const char COLOR_REVERSEVIDEO_GREEN_WHITE[] = { 0x1b, '[', '7', ';', '3', '2', ';', '4', '7', 'm', 0 };
+const char COLOR_REVERSEVIDEO_YELLOW_BLACK[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '0', 'm', 0 };
+const char COLOR_REVERSEVIDEO_YELLOW_RED[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '1', 'm', 0 };
+const char COLOR_REVERSEVIDEO_YELLOW_GREEN[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '2', 'm', 0 };
+const char COLOR_REVERSEVIDEO_YELLOW_YELLOW[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '3', 'm', 0 };
+const char COLOR_REVERSEVIDEO_YELLOW_BLUE[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '4', 'm', 0 };
+const char COLOR_REVERSEVIDEO_YELLOW_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '5', 'm', 0 };
+const char COLOR_REVERSEVIDEO_YELLOW_CYAN[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '6', 'm', 0 };
+const char COLOR_REVERSEVIDEO_YELLOW_WHITE[] = { 0x1b, '[', '7', ';', '3', '3', ';', '4', '7', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLUE_BLACK[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '0', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLUE_RED[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '1', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLUE_GREEN[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '2', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLUE_YELLOW[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '3', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLUE_BLUE[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '4', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLUE_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '5', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLUE_CYAN[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '6', 'm', 0 };
+const char COLOR_REVERSEVIDEO_BLUE_WHITE[] = { 0x1b, '[', '7', ';', '3', '4', ';', '4', '7', 'm', 0 };
+const char COLOR_REVERSEVIDEO_MAGENTA_BLACK[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '0', 'm', 0 };
+const char COLOR_REVERSEVIDEO_MAGENTA_RED[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '1', 'm', 0 };
+const char COLOR_REVERSEVIDEO_MAGENTA_GREEN[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '2', 'm', 0 };
+const char COLOR_REVERSEVIDEO_MAGENTA_YELLOW[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '3', 'm', 0 };
+const char COLOR_REVERSEVIDEO_MAGENTA_BLUE[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '4', 'm', 0 };
+const char COLOR_REVERSEVIDEO_MAGENTA_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '5', 'm', 0 };
+const char COLOR_REVERSEVIDEO_MAGENTA_CYAN[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '6', 'm', 0 };
+const char COLOR_REVERSEVIDEO_MAGENTA_WHITE[] = { 0x1b, '[', '7', ';', '3', '5', ';', '4', '7', 'm', 0 };
+const char COLOR_REVERSEVIDEO_CYAN_BLACK[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '0', 'm', 0 };
+const char COLOR_REVERSEVIDEO_CYAN_RED[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '1', 'm', 0 };
+const char COLOR_REVERSEVIDEO_CYAN_GREEN[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '2', 'm', 0 };
+const char COLOR_REVERSEVIDEO_CYAN_YELLOW[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '3', 'm', 0 };
+const char COLOR_REVERSEVIDEO_CYAN_BLUE[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '4', 'm', 0 };
+const char COLOR_REVERSEVIDEO_CYAN_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '5', 'm', 0 };
+const char COLOR_REVERSEVIDEO_CYAN_CYAN[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '6', 'm', 0 };
+const char COLOR_REVERSEVIDEO_CYAN_WHITE[] = { 0x1b, '[', '7', ';', '3', '6', ';', '4', '7', 'm', 0 };
+const char COLOR_REVERSEVIDEO_WHITE_BLACK[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '0', 'm', 0 };
+const char COLOR_REVERSEVIDEO_WHITE_RED[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '1', 'm', 0 };
+const char COLOR_REVERSEVIDEO_WHITE_GREEN[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '2', 'm', 0 };
+const char COLOR_REVERSEVIDEO_WHITE_YELLOW[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '3', 'm', 0 };
+const char COLOR_REVERSEVIDEO_WHITE_BLUE[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '4', 'm', 0 };
+const char COLOR_REVERSEVIDEO_WHITE_MAGENTA[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '5', 'm', 0 };
+const char COLOR_REVERSEVIDEO_WHITE_CYAN[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '6', 'm', 0 };
+const char COLOR_REVERSEVIDEO_WHITE_WHITE[] = { 0x1b, '[', '7', ';', '3', '7', ';', '4', '7', 'm', 0 };
 const char COLOR_CONCEALED_BLACK_BLACK[] = { 0x1b, '[', '8', ';', '3', '0', ';', '4', '0', 'm', 0 };
 const char COLOR_CONCEALED_BLACK_RED[] = { 0x1b, '[', '8', ';', '3', '0', ';', '4', '1', 'm', 0 };
 const char COLOR_CONCEALED_BLACK_GREEN[] = { 0x1b, '[', '8', ';', '3', '0', ';', '4', '2', 'm', 0 };

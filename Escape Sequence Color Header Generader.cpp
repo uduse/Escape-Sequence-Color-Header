@@ -71,7 +71,7 @@ int _tmain( int argc, _TCHAR* argv[] )
 	const string TA_BoldTxt = "BOLD";
 	const string TA_UnderscoreTxt = "UNDERSCORE";
 	const string TA_BlinkTxt = "BLINK";
-	const string TA_Reverse_videoTxt = "REVERSE_VIDEO";
+	const string TA_Reverse_videoTxt = "REVERSEVIDEO";
 	const string TA_ConcealedTxt = "CONCEALED";
 
 	const string BracketsTxt = "[]";
@@ -85,6 +85,46 @@ int _tmain( int argc, _TCHAR* argv[] )
 	const string QuoteTxt = "\'";
 
 	ofstream output( "Escape_Sequences_Colors.h" );
+
+
+	output << "/*!" << endl
+		<< " * File:" << endl
+		<< " * Escape Sequence Color Header.h" << endl
+		<< " *" << endl
+		<< " * Date:" << endl
+		<< " * 2015/02/09 16:13" << endl
+		<< " *" << endl
+		<< " * Author:" << endl
+		<< " * Uduse" << endl
+		<< " *" << endl
+		<< " *" << endl
+		<< " *" << endl
+		<< " * Text Attribute Options:" << endl
+		<< " * ATTRIBUTES_OFF, BOLD, UNDERSCORE, BLINK, REVERSE_VIDEO, CONCEALED" << endl
+		<< " *" << endl
+		<< " * Color Options:" << endl
+		<< " * BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE" << endl
+		<< " * " << endl
+		<< " * " << endl
+		<< " * Format:" << endl
+		<< " * COLOR_$Foreground Color$_$Background Color$" << endl
+		<< " * COLOR_$Text Attribute$_$Foreground Color$_$Background Color$" << endl
+		<< " * COLOR_NORMAL // To set color to default" << endl
+		<< " * e.g." << endl
+		<< " * COLOR_BLUE_BLACK // Leave Text Attribute Blank if no Text Attribute appied" << endl
+		<< " * COLOR_UNDERSCORE_YELLOW_RED" << endl
+		<< " * COLOR_NORMAL" << endl
+		<< " *" << endl
+		<< " *" << endl
+		<< " * Usage:" << endl
+		<< " *" << endl
+		<< " * Just use " << " to stream the color you want before outputing text and" << endl
+		<< " * use " << " again to set the color to normal after outputing text." << endl
+		<< " * e.g. cout << COLOR_BLUE_BLACK << \"TEXT\" << COLOR_NORMAL << endl;" << endl
+		<< " * e.g. cout << COLOR_BOLD_YELLOW_CYAN << \"TEXT\" << COLOR_NORMAL << endl;" << endl
+		<< " *" << endl
+		<< " *" << endl
+		<< " */" << endl;
 
 
 	output << "const char COLOR_NORMAL[] = { 0x1b, '[', '0', ';', '3', '9', 'm', 0 };" << endl;
@@ -204,7 +244,7 @@ int _tmain( int argc, _TCHAR* argv[] )
 					break;
 				}
 				name.append( BracketsTxt );
-				
+
 				out.append( name );
 
 
@@ -253,7 +293,7 @@ int _tmain( int argc, _TCHAR* argv[] )
 				default:
 					break;
 				}
-				
+
 
 				istringstream TAS( to_string( TA ) );
 
