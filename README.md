@@ -3,6 +3,10 @@ Color Your Output in Unix using C++!!
 
 ![](https://github.com/Uduse/Escape-Sequence-Color-Header/blob/master/img.png?raw=true)
 
+##Principle
+
+http://ascii-table.com/ansi-escape-sequences.php
+
 ##File:
 Escape Sequence Color Header.h
  
