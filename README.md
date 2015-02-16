@@ -8,7 +8,7 @@ Color Your Output in Unix using C++!!
 http://ascii-table.com/ansi-escape-sequences.php
 
 ##File:
-Escape Sequence Color Header.h
+**Escape Sequence Color Header.h (see src folder)**
  
 ##Date:
 2015/02/09 16:13 (~3h)
