@@ -52,8 +52,6 @@ use  again to set the color to normal after outputting text.
 	cout << COLOR_BOLD_YELLOW_CYAN << "TEXT" << COLOR_NORMAL << endl;
 
 ##More Samples
-	
-<br>
 
 Create a block of **Bold** text
 
