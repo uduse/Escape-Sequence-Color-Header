@@ -53,6 +53,8 @@ use  again to set the color to normal after outputting text.
 
 ##More Samples
 	
+<br>
+
 Create a block of **Bold** text
 
 	cout << COLOR_BOLD;
@@ -60,6 +62,9 @@ Create a block of **Bold** text
 	cout << COLOR_WHITE_MAGENTA << "COLOR_WHITE_MAGENTA";
 	cout << COLOR_CYAN_YELLOW << "COLOR_CYAN_YELLOW";
 	cout << COLOR_NORMAL;
+![](https://github.com/Uduse/Escape-Sequence-Color-Header/blob/master/img3.png?raw=true)
+
+<br>
 
 Create a block of **Red** text
 
@@ -67,3 +72,5 @@ Create a block of **Red** text
 	cout << COLOR_BOLD << "COLOR_BOLD";
 	cout << COLOR_UNDERSCORE << "COLOR_UNDERSCORE";
 	cout << COLOR_NORMAL;
+
+![](https://github.com/Uduse/Escape-Sequence-Color-Header/blob/master/img2.jpg?raw=true)
