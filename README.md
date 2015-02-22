@@ -29,13 +29,15 @@ Uduse
 
 General Format, include value you want in $variable$
 
+	COLOR_$Text Attribute$
 	COLOR_$Foreground Color$_$Background Color$
 	COLOR_$Text Attribute$_$Foreground Color$_$Background Color$
 	COLOR_NORMAL  // To set color to default
 
 
 e.g.
-
+	
+	COLOR_BOLD
 	COLOR_BLUE_BLACK // Leave Text Attribute Blank if no Text Attribute appied
 	COLOR_UNDERSCORE_YELLOW_RED
 	COLOR_NORMAL
@@ -48,3 +50,20 @@ use  again to set the color to normal after outputting text.
 
 	cout << COLOR_BLUE_BLACK << "TEXT" << COLOR_NORMAL << endl;
 	cout << COLOR_BOLD_YELLOW_CYAN << "TEXT" << COLOR_NORMAL << endl;
+
+##More Samples
+	
+Create a block of **Bold** text
+
+	cout << COLOR_BOLD;
+	cout << COLOR_RED_CYAN << "COLOR_RED_CYAN";
+	cout << COLOR_WHITE_MAGENTA << "COLOR_WHITE_MAGENTA";
+	cout << COLOR_CYAN_YELLOW << "COLOR_CYAN_YELLOW";
+	cout << COLOR_NORMAL;
+
+Create a block of **Red** text
+
+	cout << COLOR_RED_NORMAL;
+	cout << COLOR_BOLD << "COLOR_BOLD";
+	cout << COLOR_UNDERSCORE << "COLOR_UNDERSCORE";
+	cout << COLOR_NORMAL;

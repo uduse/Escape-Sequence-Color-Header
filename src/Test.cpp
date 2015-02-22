@@ -9,7 +9,7 @@ using namespace std;
 
 int main( int argc, char* argv[] )
 {
-	
+
 	// Block Bold
 	cout << endl;
 	cout << endl;
@@ -22,6 +22,19 @@ int main( int argc, char* argv[] )
 	cout << endl;
 	cout << endl;
 	cout << endl;
+
+	// Block Red
+	cout << endl;
+	cout << endl;
+	cout << endl;
+	cout << COLOR_RED_NORMAL;
+	cout << COLOR_BOLD << "COLOR_BOLD";
+	cout << COLOR_UNDERSCORE << "COLOR_UNDERSCORE";
+	cout << COLOR_NORMAL;
+	cout << endl;
+	cout << endl;
+	cout << endl;
+
 
 	// Tag
 	cout << endl;
