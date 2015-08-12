@@ -81,4 +81,4 @@ cout << COLOR_NORMAL;
 
 ## License
 Copyright (c) 2015, Uduse - Aedi Wang, All rights reserved.
-This projcct is licensed under The BSD 2-Clause License, see LICENSE.md for details
+This project is licensed under The BSD 2-Clause License, see LICENSE.md for details
