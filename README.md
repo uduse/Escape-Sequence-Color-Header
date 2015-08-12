@@ -19,24 +19,24 @@ Uduse
  
  
 ## Text Attribute Options:
-	BOLD, UNDERSCORE, BLINK, REVERSE_VIDEO, CONCEALED
+  BOLD, UNDERSCORE, BLINK, REVERSE_VIDEO, CONCEALED
  
 ## Color Options:
-	BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE
+  BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE
  
  
 ## Format:
 
 General Format, include value you want in $variable$
 
-	COLOR_$Text Attribute$
-	COLOR_$Foreground Color$_$Background Color$
-	COLOR_$Text Attribute$_$Foreground Color$_$Background Color$
-	COLOR_NORMAL  // To set color to default
+  COLOR_$Text Attribute$
+  COLOR_$Foreground Color$_$Background Color$
+  COLOR_$Text Attribute$_$Foreground Color$_$Background Color$
+  COLOR_NORMAL  // To set color to default
 
 
 e.g.
-	
+  
 ```cpp
 COLOR_BOLD
 COLOR_BLUE_NORMAL // Leave Text Attribute Blank if no TextAttribute appied
@@ -49,8 +49,8 @@ COLOR_NORMAL
 Just use  to stream the color you want before outputting text and
 use  again to set the color to normal after outputting text.
 
-	cout << COLOR_BLUE_BLACK << "TEXT" << COLOR_NORMAL << endl;
-	cout << COLOR_BOLD_YELLOW_CYAN << "TEXT" << COLOR_NORMAL << endl;
+  cout << COLOR_BLUE_BLACK << "TEXT" << COLOR_NORMAL << endl;
+  cout << COLOR_BOLD_YELLOW_CYAN << "TEXT" << COLOR_NORMAL << endl;
 
 ## More Examples
 
@@ -78,3 +78,7 @@ cout << COLOR_NORMAL;
 ```
 
 ![](https://github.com/Uduse/Escape-Sequence-Color-Header/blob/master/img2.jpg?raw=true)
+
+## License
+Copyright (c) 2015, Uduse - Aedi Wang, All rights reserved.
+This projcct is licensed under The BSD 2-Clause License, see LICENSE.md for details

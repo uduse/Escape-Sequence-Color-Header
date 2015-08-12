@@ -1,3 +1,6 @@
+// Copyright (c) 2015, Uduse - Aedi Wang, All rights reserved.
+// This file is licensed under The BSD 2-Clause License, see LICENSE.md for details
+
 /*!
 * # Escape-Sequence-Color-Header
 * Color Your Output in Unix!!
